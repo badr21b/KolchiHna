@@ -17,6 +17,7 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 //import { SearchBar } from 'react-native-elements';
 
@@ -47,10 +48,23 @@ class App extends React.Component<IProps, IState> {
   /* RENDERING */
   render() {
     /* Parameters */
+    function HomeScreen({navigation}: any) {
+      return (
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Home Screen</Text>
+          <Button
+            title="Go to Main "
+            onPress={() => navigation.navigate('Main')}
+          />
+        </View>
+      );
+    }
+
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Main">
             {(props) => <MainContainer {...props} />}
           </Stack.Screen>
           <Stack.Screen name="Details" component={DetailsScreen} />
