@@ -32,6 +32,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import MainContainer from './MainContainer';
+import SecondScreen from './SecondScreen';
 import DetailsScreen from './DetailsScreen';
 import {mainStyle} from '../styles/MainStyle';
 
@@ -56,6 +57,15 @@ class App extends React.Component<IProps, IState> {
             title="Go to Main "
             onPress={() => navigation.navigate('Main')}
           />
+
+          <View
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text>Home Screen</Text>
+            <Button
+              title="Go to Second "
+              onPress={() => navigation.navigate('Second')}
+            />
+          </View>
         </View>
       );
     }
@@ -64,6 +74,7 @@ class App extends React.Component<IProps, IState> {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Second" component={SecondScreen} />
           <Stack.Screen name="Main">
             {(props) => <MainContainer {...props} />}
           </Stack.Screen>
