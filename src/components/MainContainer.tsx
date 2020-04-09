@@ -12,7 +12,7 @@ import {mainStyle} from '../styles/MainStyle';
 
 export default class MainContainer extends Component<IProps, IState> {
   render() {
-    const {navigation} = this.props.navigation;
+    const {navigate} = this.props.navigation;
     return (
       <SafeAreaView>
         <ScrollView
@@ -30,7 +30,7 @@ export default class MainContainer extends Component<IProps, IState> {
             <Text>Home Screen</Text>
             <Button
               title="Go to Details"
-              onPress={() => navigation('Details')}
+              onPress={() => navigate('Details')}
             />
           </View>
 

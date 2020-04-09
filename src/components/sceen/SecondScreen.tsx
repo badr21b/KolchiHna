@@ -5,14 +5,19 @@ import {
   ScrollView,
   Text,
   View,
-  Button,
+  //Button,
 } from 'react-native';
-import HorizontalList from './scrollable/HorizontalList';
-import {mainStyle} from '../styles/MainStyle';
+
+import HorizontalList from '../scrollable/HorizontalList';
+import {mainStyle} from '../../styles/MainStyle';
 
 export default class SecondScreen extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {};
+  }
   render() {
-    const {navigation} = this.props.navigation;
+    //const {navigation} = this.props.navigation;
     return (
       <SafeAreaView>
         <ScrollView
@@ -20,7 +25,7 @@ export default class SecondScreen extends Component<IProps, IState> {
           style={styles.scrollView}>
           <View style={styles.headerStyle}>
             <Image
-              source={require('../images/logo/logo.png')}
+              source={require('../../images/logo/logo.png')}
               style={styles.logoStyle}
             />
           </View>

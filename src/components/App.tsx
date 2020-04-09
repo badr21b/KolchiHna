@@ -30,16 +30,19 @@ import {
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import MainContainer from './MainContainer';
-import SecondScreen from './SecondScreen';
-import DetailsScreen from './DetailsScreen';
-import {mainStyle} from '../styles/MainStyle';
+import SecondScreen from './sceen/SecondScreen';
+import DetailsScreen from './sceen/DetailsScreen';
+import BottomNavigator from './BottomNavigator';
 
 interface IProps {}
 interface IState {}
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 class App extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
@@ -71,16 +74,17 @@ class App extends React.Component<IProps, IState> {
     }
 
     return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Second" component={SecondScreen} />
-          <Stack.Screen name="Main">
-            {(props) => <MainContainer {...props} />}
-          </Stack.Screen>
-          <Stack.Screen name="Details" component={DetailsScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+        <BottomNavigator/>
+      // <NavigationContainer>
+      //   <Stack.Navigator>
+      //     <Stack.Screen name="Home" component={HomeScreen} />
+      //     <Stack.Screen name="Second" component={SecondScreen} />
+      //     <Stack.Screen name="Main">
+      //       {(props) => <MainContainer {...props} />}
+      //     </Stack.Screen>
+      //     <Stack.Screen name="Details" component={DetailsScreen} />
+      //   </Stack.Navigator>
+      // </NavigationContainer>
     );
   }
 }

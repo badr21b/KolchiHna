@@ -12,7 +12,7 @@ import {mainStyle} from '../styles/MainStyle';
 
 export default class MainContainer extends Component<IProps, IState> {
   render() {
-    const {navigation} = this.props.navigation;
+    const navigation = this.props.navigation;
     return (
       <SafeAreaView>
         <ScrollView
