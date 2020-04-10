@@ -55,7 +55,7 @@ class App extends React.Component<IProps, IState> {
     function HomeScreen({navigation}: any) {
       return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <Text>Home Screen</Text>
+          <Text>Kolchi Hna</Text>
           <Button
             title="Go to Main "
             onPress={() => navigation.navigate('Main')}
@@ -74,7 +74,7 @@ class App extends React.Component<IProps, IState> {
     }
 
     return (
-        <BottomNavigator/>
+      <BottomNavigator />
       // <NavigationContainer>
       //   <Stack.Navigator>
       //     <Stack.Screen name="Home" component={HomeScreen} />

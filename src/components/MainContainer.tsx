@@ -27,7 +27,7 @@ export default class MainContainer extends Component<IProps, IState> {
 
           <View
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Text>Home Screen</Text>
+            <Text>Kolchi Hna Home</Text>
             <Button title="Go to Details" onPress={() => navigate('Details')} />
           </View>
 
