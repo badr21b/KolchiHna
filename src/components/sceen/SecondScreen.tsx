@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+  Button,
   Image,
   SafeAreaView,
   ScrollView,
@@ -17,7 +18,7 @@ export default class SecondScreen extends Component<IProps, IState> {
     this.state = {};
   }
   render() {
-    //const {navigation} = this.props.navigation;
+    const {navigate} = this.props.navigation;
     return (
       <SafeAreaView>
         <ScrollView
@@ -29,6 +30,13 @@ export default class SecondScreen extends Component<IProps, IState> {
               style={styles.logoStyle}
             />
           </View>
+          <View
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text>Second Screen</Text>
+            <Button title="Go to Details" onPress={() => navigate('Details')} />
+            <Button title="Go to Main" onPress={() => navigate('Main')} />
+          </View>
+
           <View style={styles.horizontalScrollContainer}>
             <View style={styles.horizontalScrollTextContainer}>
               <Text style={styles.horizontalScrollTextLeft}>TATIL TMALARI</Text>

@@ -51,9 +51,9 @@ class BottomNavigator extends React.Component<IProps, IState> {
     return (
       <NavigationContainer>
         <Tab.Navigator>
+          <Tab.Screen name="Main" component={MainContainer} />
           <Tab.Screen name="Second" component={SecondScreen} />
           <Tab.Screen name="Details" component={DetailsScreen} />
-          <Tab.Screen name="Main" component={MainContainer} />
         </Tab.Navigator>
       </NavigationContainer>
     );
