@@ -3,13 +3,38 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export const mainStyle = StyleSheet.create({
   logoStyle: {
-    width: 100,
-    height: 100,
+    //width: 100,
+    //height: 60,
     backgroundColor: '#FFF',
-    // alignContent: 'center',
-    // flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center'
+    color: '#FF6001',
+    fontSize: 28,
+    fontWeight: 'bold',
+    alignContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    textAlign: 'center',
+    marginLeft: 100,
+  },
+  avatarStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 120,
+    //width: 120,
+    borderRadius: 60,
+  },
+  IconClearButtonStyle: {
+    width: 18,
+    height: 18,
+    backgroundColor: 'transparent',
+    alignContent: 'center',
+    margin: 6,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   horizontalScrollContainer: {
     alignContent: 'center',
@@ -61,7 +86,7 @@ export const mainStyle = StyleSheet.create({
   },
 
   scrollView: {
-    backgroundColor: Colors.lighter,
+    backgroundColor: '#FFF',
   },
   engine: {
     position: 'absolute',
@@ -97,13 +122,12 @@ export const mainStyle = StyleSheet.create({
     textAlign: 'right',
   },
   headerStyle: {
-    // marginTop: 32,
-    // paddingHorizontal: 24,
-    backgroundColor: '#ffffff',
-    alignContent: 'center',
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 120,
+    marginTop: 6,
+    //width: 120,
+    borderRadius: 60,
   },
   headerTextStyle: {
     fontSize: 64,

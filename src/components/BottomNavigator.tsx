@@ -6,27 +6,7 @@
  * @flow
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, {useState} from 'react';
-import {
-  // ImageBackground,
-  // Dimensions,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Button,
-} from 'react-native';
-//import { SearchBar } from 'react-native-elements';
-
-import {
-  LearnMoreLinks,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+import React from 'react';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';

@@ -1,5 +1,5 @@
 {
-  "name": "AwesomeTSProject",
+  "name": "Kolchi Hna",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -17,6 +17,7 @@
     "@react-navigation/stack": "^5.2.8",
     "react": "16.11.0",
     "react-native": "0.62.0",
+    "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-navigation": "^6.3.3",
     "react-native-off-canvas-menu": "^0.1.32",
