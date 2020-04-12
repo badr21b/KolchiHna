@@ -4,7 +4,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 export const mainStyle = StyleSheet.create({
   searchBar: {
     backgroundColor: '#ffffff',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 5,
     borderColor: '#D1D1D1',
     width: '90%',
@@ -16,6 +16,15 @@ export const mainStyle = StyleSheet.create({
     alignSelf: 'center',
     margin: 20,
     display: 'flex',
+    elevation: 0,
+    shadowColor: 'transparent', //no effect
+  },
+  logoStyleContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    //height: 60,
   },
   logoStyle: {
     //width: 100,
@@ -31,12 +40,12 @@ export const mainStyle = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     textAlign: 'center',
-    marginLeft: 100,
+    marginLeft: 60,
   },
   avatarStyle: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 120,
+    //height: 120,
     //width: 120,
     borderRadius: 60,
   },
@@ -139,13 +148,14 @@ export const mainStyle = StyleSheet.create({
   headerStyle: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 120,
-    marginTop: 6,
+    //height: 90,
+    //marginTop: 3,
     //width: 120,
-    borderRadius: 60,
+    //borderRadius: 60,
   },
   headerTextStyle: {
     fontSize: 64,
     fontWeight: '600',
+    //lineHeight: 30,
   },
 });

@@ -8,9 +8,9 @@
 
 import React from 'react';
 import 'react-native-gesture-handler';
-import {Alert} from 'react-native';
+import {Alert, Platform} from 'react-native';
 import {SearchBar} from 'react-native-elements';
-import {mainStyle} from "../../styles/MainStyle";
+import {mainStyle} from '../../styles/MainStyle';
 
 interface IProps {}
 interface IState {}
@@ -50,9 +50,12 @@ class SearchContainer extends React.Component<IProps, IState> {
     const {search} = this.state;
     return (
       <SearchBar
+        showCancel={Platform.OS === 'ios'}
+        showLoading={this.state.search !== ''}
         placeholder="Hawess 3la kolchi hna..."
         onChangeText={this.updateSearch}
         value={search}
+        style={{backgroundColor: '#ffffff'}}
         containerStyle={styles.searchBar}
         placeholderTextColor={'#505050'}
         inputStyle={{backgroundColor: '#ffffff'}}

@@ -7,7 +7,6 @@ import {
   Text,
   View,
   StatusBar,
-  Alert,
 } from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 
@@ -48,16 +47,10 @@ export default class MainContainer extends Component<IProps, IState> {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View style={styles.headerStyle}>
-            <View
-              style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'row',
-              }}>
+            <View style={styles.logoStyleContainer}>
               <Text style={styles.logoStyle}>KolchiHna</Text>
               <IconClearButton
-                title="Yea"
+                //title="Yea"
                 onPress={() => navigate('Details')}
               />
             </View>
