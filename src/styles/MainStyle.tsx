@@ -2,6 +2,21 @@ import {StyleSheet} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export const mainStyle = StyleSheet.create({
+  searchBar: {
+    backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#D1D1D1',
+    width: '90%',
+    height: 45,
+    textAlignVertical: 'top',
+    paddingTop: 0,
+    paddingBottom: 0,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    margin: 20,
+    display: 'flex',
+  },
   logoStyle: {
     //width: 100,
     //height: 60,

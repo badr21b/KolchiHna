@@ -7,18 +7,24 @@ import {
   Text,
   View,
   StatusBar,
+  Alert,
 } from 'react-native';
 import {Button, Icon} from 'react-native-elements';
 
 import HorizontalList from './scrollable/HorizontalList';
 import {mainStyle} from '../styles/MainStyle';
+import SearchContainer from './search/SearchContainer';
 
 export default class MainContainer extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     const IconClearButton = (props: any) => (
       <Button
-
         type="clear"
         {...props}
         style={styles.avatarStyle}
@@ -34,6 +40,7 @@ export default class MainContainer extends Component<IProps, IState> {
         }
       />
     );
+
     return (
       <SafeAreaView>
         <StatusBar barStyle={'light-content'} backgroundColor={'#4d6d7a'} />
@@ -49,14 +56,25 @@ export default class MainContainer extends Component<IProps, IState> {
                 flexDirection: 'row',
               }}>
               <Text style={styles.logoStyle}>KolchiHna</Text>
-              <IconClearButton title="Yea" onPress={() => navigate('Details')}/>
+              <IconClearButton
+                title="Yea"
+                onPress={() => navigate('Details')}
+              />
             </View>
-            <View style={{flex: 2, alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-              <Button title="Go to Details" onPress={() => navigate('Details')} />
+            <View
+              style={{
+                flex: 2,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+              }}>
+              {/*<Button*/}
+              {/*  title="Go to Details"*/}
+              {/*  onPress={() => navigate('Details')}*/}
+              {/*/>*/}
             </View>
           </View>
-
-
+          <SearchContainer />
 
           <View style={styles.horizontalScrollContainer}>
             <View style={styles.horizontalScrollTextContainer}>
