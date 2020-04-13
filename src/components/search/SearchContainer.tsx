@@ -8,7 +8,7 @@
 
 import React from 'react';
 import 'react-native-gesture-handler';
-import {Alert, Platform} from 'react-native';
+import {Alert, Platform, View, Text} from 'react-native';
 import {SearchBar} from 'react-native-elements';
 import {mainStyle} from '../../styles/MainStyle';
 
@@ -20,14 +20,39 @@ class SearchContainer extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       search: '',
+      testDataFile: 'telephone test mots allo dzdz algerie'.toLowerCase(),
+      showPositiveResultPanel: false,
+      showSearchLoading: false,
+      showNegatifResultPanel: false,
     };
     this.updateSearch = this.updateSearch.bind(this);
     this.confirmSearch = this.confirmSearch.bind(this);
   }
   updateSearch(searchValue: any) {
-    this.setState({
-      search: searchValue,
-    });
+    this.setState(
+      {
+        search: searchValue,
+        showSearchLoading: true,
+      },
+      () => {
+        if (this.state.testDataFile.includes(this.state.search.toLowerCase())) {
+          this.setState({
+            showPositiveResultPanel: true,
+            showSearchLoading: false,
+          });
+        } else {
+          this.setState({
+            showPositiveResultPanel: false,
+          });
+          setTimeout(() => {
+            this.setState({
+              showSearchLoading: false,
+              showNegatifResultPanel: true,
+            });
+          }, 5000);
+        }
+      },
+    );
   }
   confirmSearch() {
     Alert.alert(
@@ -49,18 +74,30 @@ class SearchContainer extends React.Component<IProps, IState> {
   render() {
     const {search} = this.state;
     return (
-      <SearchBar
-        showCancel={Platform.OS === 'ios'}
-        showLoading={this.state.search !== ''}
-        placeholder="Hawess 3la kolchi hna..."
-        onChangeText={this.updateSearch}
-        value={search}
-        style={{backgroundColor: '#ffffff'}}
-        containerStyle={styles.searchBar}
-        placeholderTextColor={'#505050'}
-        inputStyle={{backgroundColor: '#ffffff'}}
-        inputContainerStyle={{backgroundColor: '#ffffff'}}
-      />
+      <View>
+        <SearchBar
+          showCancel={Platform.OS === 'ios'}
+          showLoading={this.state.showSearchLoading}
+          placeholder="Hawess 3la kolchi hna..."
+          onChangeText={this.updateSearch}
+          value={search}
+          style={{backgroundColor: '#ffffff'}}
+          containerStyle={styles.searchBar}
+          placeholderTextColor={'#505050'}
+          inputStyle={{backgroundColor: '#ffffff'}}
+          inputContainerStyle={{backgroundColor: '#ffffff'}}
+        />
+        {this.state.showPositiveResultPanel && (
+          <View>
+            <Text>{this.state.search}</Text>
+          </View>
+        )}
+        {this.state.showNegatifResultPanel && (
+          <View>
+            <Text>No result found! :(</Text>
+          </View>
+        )}
+      </View>
     );
   }
 }
@@ -73,4 +110,8 @@ const styles = mainStyle;
 interface IProps {}
 interface IState {
   search: string;
+  testDataFile: string;
+  showPositiveResultPanel: boolean;
+  showNegatifResultPanel: boolean;
+  showSearchLoading: boolean;
 }
