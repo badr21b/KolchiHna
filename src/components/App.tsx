@@ -75,16 +75,18 @@ class App extends React.Component<IProps, IState> {
 
     return (
       <BottomNavigator />
-      // <NavigationContainer>
-      //   <Stack.Navigator>
-      //     <Stack.Screen name="Home" component={HomeScreen} />
-      //     <Stack.Screen name="Second" component={SecondScreen} />
-      //     <Stack.Screen name="Main">
-      //       {(props) => <MainContainer {...props} />}
-      //     </Stack.Screen>
-      //     <Stack.Screen name="Details" component={DetailsScreen} />
-      //   </Stack.Navigator>
-      // </NavigationContainer>
+      // <SafeAreaView>
+      //    <NavigationContainer>
+      //      <Stack.Navigator>
+      //        <Stack.Screen name="Home" component={HomeScreen} />
+      //        <Stack.Screen name="Second" component={SecondScreen} />
+      //        <Stack.Screen name="Main">
+      //          {(props) => <MainContainer {...props} />}
+      //        </Stack.Screen>
+      //        <Stack.Screen name="Details" component={DetailsScreen} />
+      //      </Stack.Navigator>
+      //    </NavigationContainer>
+      // </SafeAreaView>
     );
   }
 }

@@ -51,7 +51,7 @@ export default class MainContainer extends Component<IProps, IState> {
               <Text style={styles.logoStyle}>KolchiHna</Text>
               <IconClearButton
                 //title="Yea"
-                onPress={() => navigate('Details')}
+                onPress={() => navigate('Profile')}
               />
             </View>
             <View
